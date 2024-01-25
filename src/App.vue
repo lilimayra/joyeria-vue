@@ -1,30 +1,30 @@
 <script setup>
   import { ref, reactive, onMounted, watch } from "vue";
-  import { db } from "./data/guitarras";
-  import Guitarra from "./components/Guitarra.vue";
+  import { db } from "./data/joyas";
+  import Joya from "./components/Joya.vue";
   import Header from "./components/Header.vue";
   import Footer from "./components/Footer.vue";
   /*Ejemplo con reactive
   const state = reactive({
-    guitarras: db,
+    joyas: db,
   });
-  console.log(state.guitarras);*/
+  console.log(state.joyas);*/
 
   /*Ejemplo con ref
-  const guitarras = ref(db);
-  console.log(guitarras.value);*/
+  const joyas = ref(db);
+  console.log(joyas.value);*/
 
   //Ejemplo State con onMounted, ciclo de vida
-  const guitarras = ref([]);
+  const joyas = ref([]);
   //Creamos un state nuevo
   const carrito = ref([]);
   //Creamos un state para el model del header, es especifico
-  const guitarra = ref({});
+  const joya = ref({});
 
   watch(
     carrito,
     () => {
-      guardarLocalStorage()
+      guardarLocalStorage();
     },
     {
       deep: true,
@@ -32,8 +32,8 @@
   );
 
   onMounted(() => {
-    guitarras.value = db;
-    guitarra.value = db[3];
+    joyas.value = db;
+    joya.value = db[3];
 
     //Agregar el localStorage una vez el componente haya cargado
     const carritoStorage = localStorage.getItem("carrito");
@@ -48,16 +48,16 @@
   };
 
   //Funcion para el botton de agregar carrito
-  const agregarCarrito = (guitarra) => {
+  const agregarCarrito = (joya) => {
     const existeCarrito = carrito.value.findIndex(
-      (producto) => producto.id === guitarra.id
+      (producto) => producto.id === joya.id
     );
 
     if (existeCarrito >= 0) {
       carrito.value[existeCarrito].cantidad++;
     } else {
-      guitarra.cantidad = 1;
-      carrito.value.push(guitarra);
+      joya.cantidad = 1;
+      carrito.value.push(joya);
     }
 
     guardarLocalStorage();
@@ -88,7 +88,7 @@
 
 <template>
   <Header
-    :guitarra="guitarra"
+    :joya="joya"
     :carrito="carrito"
     @incrementar-cantidad="incrementarCantidad"
     @decrementar-cantidad="decrementarCantidad"
@@ -100,9 +100,9 @@
     <h2 class="text-center">Nuestra Colección</h2>
 
     <div class="row mt-5">
-      <Guitarra
-        v-for="guitarra in guitarras"
-        v-bind:guitarra="guitarra"
+      <Joya
+        v-for="joya in joyas"
+        v-bind:joya="joya"
         @agregar-carrito="agregarCarrito"
       />
     </div>

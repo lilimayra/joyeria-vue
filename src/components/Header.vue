@@ -6,7 +6,7 @@
       type: Array,
       required: true,
     },
-    guitarra: {
+    joya: {
       type: Object,
       required: true,
     },
@@ -31,7 +31,9 @@
 <template>
   <header class="py-5 header">
     <div class="container-xl">
-      <div class="row justify-content-center justify-content-md-between align-items-center">
+      <div
+        class="row justify-content-center justify-content-md-between align-items-center"
+      >
         <div class="col-8 col-md-3">
           <a href="index.html">
             <img class="img-fluid" src="/img/logo3.svg" alt="imagen logo" />
@@ -72,7 +74,7 @@
                         <img
                           class="img-fluid"
                           :src="'/img/' + producto.imagen + '.jpg'"
-                          :alt="'imagen guitarra' + producto.nombre"
+                          :alt="'imagen joya' + producto.nombre"
                         />
                       </td>
                       <td>{{ producto.nombre }}</td>
@@ -108,7 +110,7 @@
                 </table>
 
                 <p class="text-end">
-                  Total pagar:  <span class="fw-bold">{{ totalPagar }} €</span>
+                  Total pagar: <span class="fw-bold">{{ totalPagar }} €</span>
                 </p>
                 <button
                   class="btn btn-dark w-100 mt-3 p-2"
@@ -125,15 +127,15 @@
 
       <div class="row mt-5">
         <div class="col-md-6 text-center text-md-start pt-5">
-          <h1 class="display-2 fw-bold">Modelo {{ guitarra.nombre }}</h1>
+          <h1 class="display-2 fw-bold">Modelo {{ joya.nombre }}</h1>
           <p class="mt-5 fs-5 text-white">
-            {{ guitarra.descripcion }}
+            {{ joya.descripcion }}
           </p>
-          <p class="text-primary fs-1 fw-black">{{ guitarra.precio }} €</p>
+          <p class="text-primary fs-1 fw-black">{{ joya.precio }} €</p>
           <button
             type="button"
             class="btn fs-4 bg-primary text-white py-2 px-5"
-            @click="$emit('agregar-carrito', guitarra)"
+            @click="$emit('agregar-carrito', joya)"
           >
             Agregar al Carrito
           </button>
@@ -141,8 +143,6 @@
       </div>
     </div>
 
-   <img class="header-guitarra" src="/img/portada.png" alt="imagen header" />
-  
-  
+    <img class="header-joya" src="/img/portada.png" alt="imagen header" />
   </header>
 </template>

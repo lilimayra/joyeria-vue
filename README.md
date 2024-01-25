@@ -1,7 +1,23 @@
-# Vue 3 + Vite
+# Carrito de Compra de Joyería con Vue.js
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Este proyecto es un carrito de compra de una joyería desarrollado con Vue.js y estilizado con Bootstrap utilizando CSS. Permite a los usuarios agregar joyas al carrito, ajustar las cantidades con botones de incremento y decremento, eliminar productos individuales y vaciar completamente el carrito. Además, se ha implementado el uso de localStorage para almacenar las selecciones del usuario incluso después de actualizar la página.
 
-## Recommended IDE Setup
+## Características
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- **Añadir joyas al carrito:** Utiliza los botones correspondientes para agregar joyas al carrito.
+
+- **Ajuste de cantidades:** Modifica la cantidad de joyas en el carrito con los botones de más y menos.
+
+- **Eliminar productos:** Elimina productos individuales del carrito con el botón de eliminar.
+
+- **Vaciar carrito:** Elimina todos los productos del carrito con el botón de vaciar carrito.
+
+- **Persistencia de datos:** Utiliza localStorage para almacenar las selecciones del usuario y conservar el estado del carrito después de actualizar la página.
+
+## Tecnologías Utilizadas
+
+- **Vue.js 3:** Framework JavaScript para construir interfaces de usuario.
+
+- **Bootstrap:** Librería de estilos CSS para un diseño rápido y fácil.
+
+
